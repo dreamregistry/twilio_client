@@ -19,6 +19,7 @@ provider "random" {}
 
 variable "twilio_api_key_sid" {}
 variable "twilio_api_key_secret" { sensitive = true }
+variable "twilio_phone_number" {}
 
 data "aws_region" "current" {
 }
@@ -45,3 +46,8 @@ output "TWILIO_API_KEY_SECRET" {
     arn    = aws_ssm_parameter.api_key_secret.arn
   }
 }
+
+output "TWILIO_PHONE_NUMBER" {
+  value = var.twilio_phone_number
+}
+
