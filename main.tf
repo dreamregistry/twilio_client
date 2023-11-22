@@ -20,6 +20,7 @@ provider "random" {}
 variable "twilio_api_key_sid" {}
 variable "twilio_api_key_secret" { sensitive = true }
 variable "twilio_phone_number" {}
+variable "twilio_account_sid" {}
 
 data "aws_region" "current" {
 }
@@ -50,4 +51,9 @@ output "TWILIO_API_KEY_SECRET" {
 output "TWILIO_PHONE_NUMBER" {
   value = var.twilio_phone_number
 }
+
+output "TWILIO_ACCOUNT_SID" {
+  value = var.twilio_account_sid
+}
+
 
